@@ -54,6 +54,7 @@ let total = 0n;
 for (const splitter of splitters) {
   const key = splitterKey(splitter.y, splitter.x);
   const count = routes.get(key) ?? 0n;
+  // since splitters are sorted and parsed top to bottom this is an unreachable splitter, ignore it
   if (count === 0n) continue;
 
   const ch = splitterChildren.get(key);
