@@ -70,7 +70,7 @@ const connectToCircuits = (distance, key) => {
       circuits[distance.a.circuit].push(distance.b);
     } else {
       distance.a.circuit = distance.b.circuit;
-      circuits[distance.a.circuit].push(distance.a);
+      circuits[distance.b.circuit].push(distance.a);
     }
   }
   if (circuits.filter(circuit => circuit.length === 1000).length === 1) {
