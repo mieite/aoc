@@ -45,7 +45,6 @@ distanceKeys.sort((a, b) => {
 });
 
 const circuits = [];
-let lastUnconnected;
 
 const connectToCircuits = (distance, key) => {
   if (!distance.a.circuit && !distance.b.circuit) {
@@ -53,7 +52,6 @@ const connectToCircuits = (distance, key) => {
     distance.a.circuit = circuitId;
     distance.b.circuit = circuitId;
     circuits.push([distance.a, distance.b]);
-    lastUnconnected = key;
   } else if (distance.a.circuit && distance.b.circuit && distance.a.circuit === distance.b.circuit) {
     // do nothing, they are in same circuit already
   } else if (distance.a.circuit && distance.b.circuit && distance.a.circuit !== distance.b.circuit) {
