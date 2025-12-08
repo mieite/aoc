@@ -73,7 +73,7 @@ const connectToCircuits = (distance, key) => {
       circuits[distance.b.circuit].push(distance.a);
     }
   }
-  if (circuits.filter(circuit => circuit.length === 1000).length === 1) {
+  if (circuits.filter(circuit => circuit.length === 1000).length) {
     console.log(`(result to b): all connected to single circuit - last connection: ${key} - multiplication = ${distance.a.x * distance.b.x}`);
     return true;
   }
